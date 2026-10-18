@@ -94,7 +94,7 @@ Step 2 returns `200` with the operator profile whose `id` equals the `id` return
 
 | Field | Value |
 |---|---|
-| **Doc ref** | 03 "Authentication & authorisation" ("`authorisation_level` is no longer self-service") · 04 "Operator portal" |
+| **Doc ref** | 03 "Authentication & authorisation" ("`authorisation_level` is no longer self-service") · 04 "Operator portal" · 01 "Enums" (`L1` < `L2` < `L3`) |
 | **Priority** | High |
 | **Preconditions** | Logged out; no operator with email `qa.new6@example.test` or national_id `QA-NID-0006` exists |
 | **Test data** | `{"email": "qa.new6@example.test", "password": "Qa-Passw0rd!2026", "legal_name": "QA New Six LLC", "national_id": "QA-NID-0006", "authorisation_level": "L3"}` |
@@ -104,7 +104,9 @@ Step 2 returns `200` with the operator profile whose `id` equals the `id` return
 2. GET /api/v1/auth/me with the session cookie from step 1, if one was set
 
 **Expected result**
-**Not specified in docs** — 03 says registration always creates `L1`, but not whether a client-sent `authorisation_level` is rejected (`400`) or ignored. Known: no operator ends up at `L3`.
+**Not specified in docs** — 03 "Authentication & authorisation" says registration always creates `L1`, but not whether a client-sent `authorisation_level` is rejected (`400`) or ignored (gap → requirements finding). Known:
+- If step 1 returns `201`: the step 1 response body and the step 2 `GET /auth/me` response both show `authorisation_level = "L1"` (not `L2` or `L3`).
+- If step 1 returns `4xx`: no session cookie is set, no operator with email `qa.new6@example.test` or national_id `QA-NID-0006` exists, and `POST /api/v1/auth/login` with these credentials fails.
 
 ---
 
