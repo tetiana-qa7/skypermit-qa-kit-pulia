@@ -49,8 +49,9 @@ If a task seems to need any of these, stop and ask. All output goes in this repo
 ## Planned structure
 
 ```
-test-cases/        # test cases (and test plans) written from ../skypermit/docs
-.claude/skills/    # project skills for repeatable QA tasks (e.g. test-case generation, requirement review)
+test-plan/         # test plans written from ../skypermit/docs (test-plan-<topic>.md)
+test-cases/        # test cases written from ../skypermit/docs
+.claude/skills/    # project skills for repeatable QA tasks (e.g. test-plan, test-case generation, requirement review)
 ```
 
-Neither directory exists yet. Where bugs and reports will go hasn't been decided. Ask before adding new top-level directories.
+`test-plan/` and `.claude/skills/` exist; `test-cases/` doesn't yet. Where bugs and reports will go hasn't been decided. Ask before adding new top-level directories.
