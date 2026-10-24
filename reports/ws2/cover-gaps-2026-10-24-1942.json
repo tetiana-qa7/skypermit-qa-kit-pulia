@@ -1,0 +1,24 @@
+{
+  "run": { "date": "2026-10-24", "args": { "max": 1, "gate": "PILOT" } },
+  "gaps_before": 12,
+  "gaps_after": 11,
+  "rules": [
+    {
+      "id": "PILOT:OH-1 §2.1:Rating doesn't cover zone class",
+      "gate": "PILOT",
+      "rule_reference": "OH-1 §2.1",
+      "gate_file": "test-cases/tc-gate-pilot.md",
+      "blocked_by": null,
+      "status": "covered",
+      "cases": {
+        "kept": ["API-GPIL-001", "API-GPIL-002", "API-GPIL-003", "API-GPIL-004", "API-GPIL-005", "API-GPIL-006", "API-GPIL-007", "API-GPIL-008", "API-GPIL-009"],
+        "open_question": [],
+        "deleted": [],
+        "unverified": []
+      }
+    }
+  ],
+  "totals": { "rules_selected": 1, "rules_covered": 1, "cases_written": 9, "kept": 9, "open_questions": 0, "deleted": 0, "unverified": 0 },
+  "candidate_bugs": [],
+  "files_changed": ["test-cases/tc-gate-pilot.md"]
+}

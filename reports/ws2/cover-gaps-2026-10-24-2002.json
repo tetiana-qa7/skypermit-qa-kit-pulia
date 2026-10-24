@@ -1,0 +1,52 @@
+{
+  "run": { "date": "2026-10-24", "args": { "max": 3, "gate": "TIME_WINDOW" } },
+  "gaps_before": 11,
+  "gaps_after": 8,
+  "rules": [
+    {
+      "id": "TIME_WINDOW:TSD-4 §2.1:Lead time too short",
+      "gate": "TIME_WINDOW",
+      "rule_reference": "TSD-4 §2.1",
+      "gate_file": "test-cases/tc-gate-time-window.md",
+      "blocked_by": null,
+      "status": "covered",
+      "cases": {
+        "kept": ["API-GTW-001", "API-GTW-002", "API-GTW-003", "API-GTW-004", "API-GTW-005", "API-GTW-006", "API-GTW-007"],
+        "open_question": [],
+        "deleted": [],
+        "unverified": []
+      }
+    },
+    {
+      "id": "TIME_WINDOW:TSD-4 §2.2:Booked too far in advance",
+      "gate": "TIME_WINDOW",
+      "rule_reference": "TSD-4 §2.2",
+      "gate_file": "test-cases/tc-gate-time-window.md",
+      "blocked_by": null,
+      "status": "covered",
+      "cases": {
+        "kept": ["API-GTW-008", "API-GTW-009", "API-GTW-011"],
+        "open_question": [{ "case": "API-GTW-010", "oq": "OQ-001" }, { "case": "API-GTW-012", "oq": "OQ-002" }],
+        "deleted": [],
+        "unverified": []
+      }
+    },
+    {
+      "id": "TIME_WINDOW:TSD-4 §3:Duration out of range",
+      "gate": "TIME_WINDOW",
+      "rule_reference": "TSD-4 §3",
+      "gate_file": "test-cases/tc-gate-time-window.md",
+      "blocked_by": null,
+      "status": "covered",
+      "cases": {
+        "kept": ["API-GTW-013", "API-GTW-014", "API-GTW-015", "API-GTW-016", "API-GTW-017", "API-GTW-018"],
+        "open_question": [{ "case": "API-GTW-019", "oq": "OQ-003" }, { "case": "API-GTW-020", "oq": "OQ-003" }],
+        "deleted": [],
+        "unverified": []
+      }
+    }
+  ],
+  "totals": { "rules_selected": 3, "rules_covered": 3, "cases_written": 20, "kept": 16, "open_questions": 4, "deleted": 0, "unverified": 0 },
+  "candidate_bugs": [],
+  "files_changed": ["test-cases/tc-gate-time-window.md", "test-cases/open-questions.md", "reports/ws2/cover-gaps-2026-10-24-2002.json"]
+}
